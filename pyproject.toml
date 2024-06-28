@@ -1,0 +1,31 @@
+[tool.nx]
+autoActivate = true
+
+[tool.poetry]
+name = "@aws-ecs-cicd/source"
+version = "1.0.0"
+description = ""
+authors = [ ]
+license = "Proprietary"
+readme = "README.md"
+
+  [tool.poetry.dependencies]
+  python = ">=3.9,<3.11"
+
+    [tool.poetry.dependencies.webapp]
+    path = "apps/webapp"
+    develop = true
+
+[tool.poetry.group.dev.dependencies]
+autopep8 = "^2.3.1"
+flake8 = "^7.1.0"
+ruff = "^0.5.0"
+mypy = "^1.10.1"
+pytest = "^8.2.2"
+pytest-sugar = "^1.0.0"
+pytest-cov = "^5.0.0"
+pytest-html = "^4.1.1"
+
+[build-system]
+requires = [ "poetry-core==1.1.0" ]
+build-backend = "poetry.core.masonry.api"

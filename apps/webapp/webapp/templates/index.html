@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+  <section class="m-6">
+    <img
+      src="{{ url_for('static', filename='img/fiap_logo.png') }}"
+      alt="Home"
+      class="mx-auto d-block w-1/4"
+    />
+    <h2 class="text-2xl font-bold text-center text-blue-500 p-4">
+      Welcome to the <span class="hover:text-blue-700"> {{ path }} </span> page!
+    </h2>
+    <p class="text-center text-lg">
+      This is a demo Flask app that demonstrates CI/CD with GitHub Actions and
+      AWS.
+    </p>
+    <div #info class="m-6 bg-gray-200 p-4 rounded-lg border border-gray-300">
+      <p class="text-center text-lg">Current URL Path: {{ path }}</p>
+      <p class="text-center text-lg">
+        Current Python Version: {{ python_version }}
+      </p>
+      <p class="text-center text-lg">
+        Current Flask Version: {{ flask_version }}
+      </p>
+      <p class="text-center text-lg">Current Datetime: {{ datetime }}</p>
+    </div>
+  </section>
+{% endblock %}

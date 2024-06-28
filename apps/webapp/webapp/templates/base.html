@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{% block title %}My Flask App{% endblock %}</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/style.css') }}"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <header class="m-6">
+      <h1 class="text-4xl font-bold text-center text-blue-500 p-4">
+        Demo Flask App - CICD with GitHub Actions and AWS
+      </h1>
+    </header>
+    <main>{% block content %}{% endblock %}</main>
+    <footer>
+      {% block footer %}
+        <section class="m-6">
+          <p class="text-center text-lg">
+            &copy; 2024 - <a href="https://www.fiap.com.br">FIAP</a>
+          </p>
+        </section>
+      {% endblock %}
+    </footer>
+  </body>
+</html>

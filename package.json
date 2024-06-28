@@ -8,6 +8,7 @@
     "@nx/js": "19.3.2",
     "@nx/workspace": "19.3.2",
     "@nxlv/python": "^18.1.0",
-    "nx": "19.3.2"
+    "nx": "19.3.2",
+    "prettier-plugin-jinja-template": "^1.4.1"
   }
 }
