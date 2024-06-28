@@ -19,9 +19,10 @@ phases:
     commands:
       - echo "Entered the build phase..."
       - echo "Building the project..."
-      - npx nx run webapp:lint
-      - npx nx run webapp:test
-      - npx nx run webapp:build
+      - npm run lint
+      - npm run format
+      - npm run test
+      - npm run build
     finally:
       - echo "Finished the build phase..."
   post_build:

@@ -16,6 +16,10 @@ readme = "README.md"
     path = "apps/webapp"
     develop = true
 
+    [tool.poetry.dependencies.infra]
+    path = "apps/infra"
+    develop = true
+
 [tool.poetry.group.dev.dependencies]
 autopep8 = "^2.3.1"
 flake8 = "^7.1.0"

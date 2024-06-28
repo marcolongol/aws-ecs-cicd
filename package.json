@@ -2,12 +2,18 @@
   "name": "@aws-ecs-cicd/source",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "lint": "nx run-many --target=lint --all --verbose",
+    "format": "nx run-many --target=format --all --verbose",
+    "test": "nx run-many --target=test --all --verbose",
+    "build": "nx run-many --target=build --all --verbose"
+  },
   "private": true,
   "devDependencies": {
     "@nx/js": "19.3.2",
     "@nx/workspace": "19.3.2",
     "@nxlv/python": "^18.1.0",
+    "aws-cdk": "^2.147.2",
     "nx": "19.3.2",
     "prettier-plugin-jinja-template": "^1.4.1"
   }
