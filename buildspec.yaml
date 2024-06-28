@@ -1,0 +1,31 @@
+# yaml-language-server: $schema=https://gist.githubusercontent.com/dacci/6ccf1b1cdcb93228f574137c05e82491/raw/9e9749dd77658096f7c75199abbb52c6d7cd233b/buildspec.schema.json
+---
+version: 0.2
+phases:
+  install:
+    runtime-versions:
+      nodejs: "20"
+      python: "3.9.5"
+  pre_build:
+    commands:
+      - echo "Entered the pre_build phase..."
+      - echo "Installing dependencies..."
+      - npm install
+      - pip install poetry
+      - poetry install
+    finally:
+      - echo "Finished the pre_build phase..."
+  build:
+    commands:
+      - echo "Entered the build phase..."
+      - echo "Building the project..."
+      - npx nx run webapp:lint
+      - npx nx run webapp:test
+      - npx nx run webapp:build
+    finally:
+      - echo "Finished the build phase..."
+  post_build:
+    commands:
+      - echo "Entered the post_build phase..."
+    finally:
+      - echo "Finished the post_build phase..."
