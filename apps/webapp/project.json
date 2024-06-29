@@ -3,6 +3,7 @@
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "projectType": "application",
   "sourceRoot": "apps/webapp/webapp",
+  "tags": [],
   "targets": {
     "lock": {
       "executor": "@nxlv/python:run-commands",
@@ -50,7 +51,7 @@
       },
       "configurations": {
         "development": {
-          "command": "poetry run hupper -m waitress --listen *:3000 webapp:app"
+          "command": "poetry run python -m webapp"
         }
       },
       "defaultConfiguration": "development"
@@ -72,7 +73,35 @@
         "command": "poetry run pytest tests/",
         "cwd": "apps/webapp"
       }
+    },
+    "container": {
+      "executor": "@nx-tools/nx-container:build",
+      "dependsOn": ["build"],
+      "options": {
+        "engine": "docker",
+        "context": "{workspaceRoot}",
+        "push": true,
+        "metadata": {
+          "images": [
+            "533267031235.dkr.ecr.us-east-1.amazonaws.com/aws-ecs-cicd-repo"
+          ],
+          "load": true,
+          "tags": [
+            "type=schedule",
+            "type=ref,event=branch",
+            "type=ref,event=tag",
+            "type=ref,event=pr",
+            "type=sha,prefix=sha-"
+          ],
+          "labels": [
+            "org.opencontainers.image.title=webapp",
+            "org.opencontainers.image.description=webapp",
+            "org.opencontainers.image.source=https://github.com/marcolongol/aws-ecs-cicd",
+            "org.opencontainers.image.vendor=marcolongol",
+            "org.opencontainers.image.licenses=MIT"
+          ]
+        }
+      }
     }
-  },
-  "tags": []
+  }
 }

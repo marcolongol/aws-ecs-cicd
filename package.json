@@ -10,6 +10,8 @@
   },
   "private": true,
   "devDependencies": {
+    "@nx-tools/container-metadata": "^6.0.1",
+    "@nx-tools/nx-container": "^6.0.1",
     "@nx/js": "19.3.2",
     "@nx/workspace": "19.3.2",
     "@nxlv/python": "^18.1.0",
