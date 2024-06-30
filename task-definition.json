@@ -1,0 +1,35 @@
+{
+  "requiresCompatibilities": ["FARGATE"],
+  "inferenceAccelerators": [],
+  "containerDefinitions": [
+    {
+      "name": "aws-ecs-cicd-container",
+      "image": "aws-ecs-cicd-repo:sha-<GIT_SHA>",
+      "resourceRequirements": null,
+      "essential": true,
+      "portMappings": [
+        {
+          "containerPort": "3000",
+          "protocol": "tcp"
+        }
+      ],
+      "logConfiguration": {
+        "logDriver": "awslogs",
+        "options": {
+          "awslogs-create-group": "true",
+          "awslogs-group": "/ecs/aws-ecs-cicd",
+          "awslogs-region": "us-east-1",
+          "awslogs-stream-prefix": "ecs"
+        }
+      }
+    }
+  ],
+  "volumes": [],
+  "networkMode": "awsvpc",
+  "memory": "512",
+  "cpu": "256",
+  "executionRoleArn": "arn:aws:iam::533267031235:role/ecs-task-execution-role",
+  "family": "aws-ecs-cicd",
+  "taskRoleArn": "",
+  "placementConstraints": []
+}
