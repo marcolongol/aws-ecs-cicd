@@ -83,7 +83,7 @@
         "push": true,
         "metadata": {
           "images": [
-            "533267031235.dkr.ecr.us-east-1.amazonaws.com/aws-ecs-cicd-repo"
+            "533267031235.dkr.ecr.us-east-2.amazonaws.com/aws-ecs-cicd-repo"
           ],
           "load": true,
           "tags": [
