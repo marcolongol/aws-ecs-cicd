@@ -33,6 +33,13 @@
         "bundleLocalDependencies": true
       }
     },
+    "deploy": {
+      "executor": "@nxlv/python:run-commands",
+      "options": {
+        "commands": ["npx aws-cdk deploy"],
+        "cwd": "apps/infra"
+      }
+    },
     "install": {
       "executor": "@nxlv/python:install",
       "options": {

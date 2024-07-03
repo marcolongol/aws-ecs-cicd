@@ -64,6 +64,10 @@ jobs:
           npm ci
           poetry install
 
+      - name: Deploy CDK
+        run: |
+          npx nx run infra:deploy --verbose
+
       - name: Build and push Docker image
         id: build
         run: |
