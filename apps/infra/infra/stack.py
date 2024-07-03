@@ -17,7 +17,18 @@ class InfraStack(Stack):
         )
 
         # Create the VPC
-        self.vpc = ec2.Vpc(self, "aws-ecs-cicd-vpc", max_azs=2)
+        self.vpc = ec2.Vpc(
+            self,
+            "aws-ecs-cicd-vpc",
+            max_azs=1,
+            create_internet_gateway=True,
+            nat_gateways=1,
+            nat_gateway_provider=ec2.NatProvider.instance_v2(
+                instance_type=ec2.InstanceType.of(
+                    ec2.InstanceClass.BURSTABLE2, ec2.InstanceSize.MICRO
+                )
+            ),
+        )
 
         # Create the Security Group
         self.security_group = ec2.SecurityGroup(
