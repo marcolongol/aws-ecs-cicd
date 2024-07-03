@@ -34,7 +34,14 @@ As pastas do projeto estão organizadas da seguinte forma:
 │       └── renovate.yml                   # Workflow de atualização de dependências
 ├── apps                                   # Projetos do monorepositório (NX)
 │   ├── infra                              # Infraestrutura como código
-│   ├── webapp                             # Aplicação web
+│   │   ├── infra
+│   │   │   └── stack.py                   # Definição de pilha do CDK
+│   │   └── tests                          # Testes da infraestrutura
+│   ├── webapp                             # Aplicação web em Flask
+│   │   ├── webapp
+│   │   │   ├── __main__.py                # Inicialização da aplicação
+│   │   ├── tests                          # Testes da aplicação
+│   │   └── Dockerfile                     # Dockerfile da aplicação
 │   └── docs                               # Diagramas e documentação
 ├── .editorconfig                          # Configuração do editor
 ├── .gitignore                             # Arquivos ignorados pelo git
