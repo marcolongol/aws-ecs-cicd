@@ -47,7 +47,7 @@ jobs:
         uses: aws-actions/amazon-ecr-login@v1
 
       - name: Setup Node.js
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v4
         with:
           node-version: "20"
           cache: "npm"
