@@ -21,7 +21,7 @@ readme = "README.md"
   include = "webapp"
 
   [tool.poetry.dependencies]
-  python = ">=3.9,<3.11"
+  python = ">=3.12,<3.13"
   flask = "^3.0.3"
   gunicorn = "^22.0.0"
 
