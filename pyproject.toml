@@ -20,6 +20,10 @@ readme = "README.md"
     path = "apps/infra"
     develop = true
 
+    [tool.poetry.dependencies.docs]
+    path = "apps/docs"
+    develop = true
+
 [tool.poetry.group.dev.dependencies]
 autopep8 = "^2.3.1"
 flake8 = "^7.1.0"

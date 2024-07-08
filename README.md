@@ -96,4 +96,8 @@ O pipeline de CI/CD é composto por 2 etapas:
   Este arquivo é responsável por realizar o build da aplicação e executar os testes unitários.
 
 - Github Actions: Assim que o CodeDeploy é finalizado com sucesso, o Github Actions é disparado e realiza o deploy da infraestrutura e da aplicação na AWS.
-  Os arquivos de configuração do Github Actions estão localizados na pasta [.github/workflows](./.github/workflows).
+  Os arquivos de configuração e documentação adicional referente aos workflows do Github Actions estão localizados na pasta [.github/workflows](./.github/workflows).
+
+Abaixo temos um diagrama que ilustra o fluxo de CI/CD:
+
+![CI/CD](./docs/aws-diagram.png)
