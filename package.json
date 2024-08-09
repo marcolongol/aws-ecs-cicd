@@ -14,7 +14,7 @@
     "@nx-tools/nx-container": "^6.0.1",
     "@nx/js": "19.5.2",
     "@nx/workspace": "19.5.2",
-    "@nxlv/python": "^18.1.0",
+    "@nxlv/python": "^19.0.0",
     "aws-cdk": "^2.147.3",
     "nx": "19.5.2",
     "prettier-plugin-jinja-template": "^1.4.1"
